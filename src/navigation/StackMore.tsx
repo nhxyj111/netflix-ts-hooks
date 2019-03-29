@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { createStackNavigator } from "react-navigation";
 import SvgMenu from "../components/icons/Svg.Menu";
@@ -10,12 +9,9 @@ import navigationOptions from "./defaultOptions";
 
 // todo:
 
-const Icon = ({ focused }: any) => <SvgMenu active={focused} />;
-
-Icon.propTypes = {
-  // required
-  focused: PropTypes.bool.isRequired
-};
+const Icon = ({ focused }: { focused: boolean }) => (
+  <SvgMenu active={focused} />
+);
 
 export default createStackNavigator(
   {

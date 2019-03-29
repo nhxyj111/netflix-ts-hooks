@@ -1,6 +1,13 @@
-import { Constants } from "expo";
+// import Constants from "expo-constants";
 import React from "react";
-import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Alert,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View
+} from "react-native";
 import { NavigationInjectedProps } from "react-navigation";
 import { colors, fonts, gStyle } from "../api/constants";
 import Header from "../components/Header";
@@ -30,12 +37,13 @@ const alertDeleteDownloads = () => {
 };
 
 const AppSettings: React.FC<NavigationInjectedProps> = ({ navigation }) => {
-  const { platform } = Constants;
+  // todo:
+  // const { platform } = Constants;
   let deviceType = "Unknown Device";
 
   // is iOS?
-  if (typeof platform.ios !== "undefined") {
-    deviceType = platform.ios.model;
+  if (Platform.OS !== "ios") {
+    deviceType = Platform.OS;
   }
 
   return (

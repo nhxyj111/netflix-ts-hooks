@@ -16,7 +16,7 @@ export const cacheImages = (images: { [name: string]: any }) => {
     if (typeof image === "string") {
       return Image.prefetch(image);
     }
-
-    return Asset.fromModule(image).downloadAsync();
+    console.log("<><><><><><>");
+    Asset.fromModule(image).downloadAsync();
   });
 };

@@ -1,4 +1,4 @@
-import { Constants } from "expo";
+// import Constants from "expo-constants";
 import React from "react";
 import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import { NavigationInjectedProps } from "react-navigation";
@@ -66,7 +66,7 @@ const More: React.FC<NavigationInjectedProps> = ({ navigation }) => {
           text="Sign Out"
         />
         <Text style={styles.versionText}>
-          {`Version: ${Constants.manifest.version}`}
+          {"Version: ${Constants.manifest.version}"}
         </Text>
       </ScrollView>
 

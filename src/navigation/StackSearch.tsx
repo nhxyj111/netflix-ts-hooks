@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { createStackNavigator } from "react-navigation";
 import SvgSearch from "../components/icons/Svg.Search";
@@ -7,12 +6,9 @@ import navigationOptions from "./defaultOptions";
 
 // todo:
 
-const Icon = ({ focused }: any) => <SvgSearch active={focused} />;
-
-Icon.propTypes = {
-  // required
-  focused: PropTypes.bool.isRequired
-};
+const Icon = ({ focused }: { focused: boolean }) => (
+  <SvgSearch active={focused} />
+);
 
 export default createStackNavigator(
   {

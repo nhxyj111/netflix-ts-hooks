@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 import { Animated, Easing } from "react-native";
 import { createStackNavigator } from "react-navigation";
@@ -11,12 +10,9 @@ import TvShowsScreen from "../screens/TvShows";
 
 // todo:
 
-const Icon = ({ focused }: any) => <SvgHome active={focused} />;
-
-Icon.propTypes = {
-  // required
-  focused: PropTypes.bool.isRequired
-};
+const Icon = ({ focused }: { focused: boolean }) => (
+  <SvgHome active={focused} />
+);
 
 const transitionConfig = () => ({
   transitionSpec: {
